@@ -1333,9 +1333,166 @@
         align-items: center;
       }
     }
+
+    /* Demo Form Modal */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--charcoal);
+      border: 1px solid rgba(104, 120, 214, 0.3);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 420px;
+      width: 90%;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: none;
+      border: none;
+      color: var(--gray-500);
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .modal-close:hover {
+      color: var(--white);
+    }
+
+    .modal-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .modal-subtitle {
+      color: var(--gray-500);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--gray-300);
+      margin-bottom: 6px;
+    }
+
+    .form-input, .form-select {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 0.95rem;
+      font-family: inherit;
+    }
+
+    .form-input:focus, .form-select:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .form-input::placeholder {
+      color: var(--gray-500);
+    }
+
+    .form-select option {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Demo Form Modal -->
+  <div class="modal-overlay" id="demoModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M18 6L6 18M6 6l12 12"/>
+        </svg>
+      </button>
+      <h3 class="modal-title">Book Your Free Demo</h3>
+      <p class="modal-subtitle">Quick intro so we can prepare for your call</p>
+      <form id="demoForm" onsubmit="submitDemoForm(event)">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" id="userName" placeholder="John Smith" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Business Type</label>
+          <select class="form-select" id="businessType" required>
+            <option value="">Select your industry</option>
+            <option value="Plumber">Plumber</option>
+            <option value="Electrician">Electrician</option>
+            <option value="HVAC / Heating">HVAC / Heating</option>
+            <option value="Locksmith">Locksmith</option>
+            <option value="Builder / Contractor">Builder / Contractor</option>
+            <option value="Roofer">Roofer</option>
+            <option value="Landscaper">Landscaper</option>
+            <option value="Mechanic / Garage">Mechanic / Garage</option>
+            <option value="Dental Practice">Dental Practice</option>
+            <option value="Medical Practice">Medical Practice</option>
+            <option value="Estate Agent">Estate Agent</option>
+            <option value="Accountant">Accountant</option>
+            <option value="Salon / Spa">Salon / Spa</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Missed Calls per Week (approx)</label>
+          <select class="form-select" id="missedCalls" required>
+            <option value="">Select range</option>
+            <option value="1-5">1-5 calls</option>
+            <option value="5-10">5-10 calls</option>
+            <option value="10-20">10-20 calls</option>
+            <option value="20+">20+ calls</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary form-submit">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <nav class="nav">
@@ -1350,7 +1507,7 @@
       </ul>
       <div class="nav-cta">
         <a href="#pricing" class="btn btn-secondary">View Pricing</a>
-        <a href="https://wa.me/21629707770?text=Hi%2C%20I%27m%20interested%20in%20AIGEX%20Voice%20Agents%20for%20my%20business.%20Can%20we%20schedule%20a%20demo%3F" target="_blank" class="btn btn-primary">Book a Demo</a>
+        <a href="#" onclick="openModal(); return false;" class="btn btn-primary">Book a Demo</a>
       </div>
     </div>
   </nav>
@@ -1368,7 +1525,7 @@
           <p class="hero-subtitle">AI receptionist that captures every lead and books jobs while you work. Never lose a £500+ job to voicemail again.</p>
           <p class="hero-price"><strong>£1,500</strong> setup + <strong>£497/mo</strong> — One job pays for months of service</p>
           <div class="hero-cta">
-            <a href="https://wa.me/21629707770?text=Hi%2C%20I%27m%20interested%20in%20AIGEX%20Voice%20Agents%20for%20my%20business.%20Can%20we%20schedule%20a%20demo%3F" target="_blank" class="btn btn-primary btn-lg">Book a Demo</a>
+            <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg">Book a Demo</a>
             <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
           </div>
           <div class="hero-stats">
@@ -1968,7 +2125,7 @@
             <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Ongoing optimisation and support</li>
           </ul>
 
-          <a href="https://wa.me/21629707770?text=Hi%2C%20I%27m%20interested%20in%20AIGEX%20Voice%20Agents%20for%20my%20business.%20Can%20we%20schedule%20a%20demo%3F" target="_blank" class="btn btn-primary btn-lg" style="width: 100%;">Book Your Free Demo</a>
+          <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg" style="width: 100%;">Book Your Free Demo</a>
           <p class="pricing-guarantee">No commitment required. See it handle your calls first.</p>
         </div>
       </div>
@@ -1982,7 +2139,7 @@
         <h2>Stop Losing £500+ Jobs to Voicemail</h2>
         <p>Book a demo and see how AIGEX captures revenue you're currently missing.</p>
         <div class="cta-buttons">
-          <a href="https://wa.me/21629707770?text=Hi%2C%20I%27m%20interested%20in%20AIGEX%20Voice%20Agents%20for%20my%20business.%20Can%20we%20schedule%20a%20demo%3F" target="_blank" class="btn btn-primary btn-lg">Book Your Free Demo</a>
+          <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg">Book Your Free Demo</a>
           <a href="#pricing" class="btn btn-secondary btn-lg">View Pricing</a>
         </div>
         <p class="cta-note">No commitment required. See ROI in action first.</p>
@@ -2015,6 +2172,47 @@
   </footer>
 
   <script>
+    // Demo Modal
+    function openModal() {
+      document.getElementById('demoModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('demoModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on overlay click
+    document.getElementById('demoModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
+    });
+
+    // Form submission
+    function submitDemoForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('userName').value;
+      const business = document.getElementById('businessType').value;
+      const calls = document.getElementById('missedCalls').value;
+
+      const message = `Hi, I'd like to book a demo for AIGEX Voice Agents.
+
+*Name:* ${name}
+*Business:* ${business}
+*Missed calls/week:* ${calls}
+
+Looking forward to seeing how it works!`;
+
+      const encoded = encodeURIComponent(message);
+      window.open(`https://wa.me/21629707770?text=${encoded}`, '_blank');
+      closeModal();
+    }
+
     // FAQ Accordion
     document.querySelectorAll('.faq-question').forEach(button => {
       button.addEventListener('click', () => {
