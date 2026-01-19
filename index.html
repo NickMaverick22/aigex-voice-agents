@@ -1477,13 +1477,13 @@
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">Missed Calls per Week (approx)</label>
-          <select class="form-select" id="missedCalls" required>
+          <label class="form-label">Number of Calls per Week</label>
+          <select class="form-select" id="numCalls" required>
             <option value="">Select range</option>
-            <option value="1-5">1-5 calls</option>
-            <option value="5-10">5-10 calls</option>
-            <option value="10-20">10-20 calls</option>
-            <option value="20+">20+ calls</option>
+            <option value="1-10">1-10 calls</option>
+            <option value="10-25">10-25 calls</option>
+            <option value="25-50">25-50 calls</option>
+            <option value="50+">50+ calls</option>
           </select>
         </div>
         <button type="submit" class="btn btn-primary form-submit">
@@ -2198,13 +2198,13 @@
       e.preventDefault();
       const name = document.getElementById('userName').value;
       const business = document.getElementById('businessType').value;
-      const calls = document.getElementById('missedCalls').value;
+      const calls = document.getElementById('numCalls').value;
 
       const message = `Hi, I'd like to book a demo for AIGEX Voice Agents.
 
 *Name:* ${name}
 *Business:* ${business}
-*Missed calls/week:* ${calls}
+*Calls/week:* ${calls}
 
 Looking forward to seeing how it works!`;
 
