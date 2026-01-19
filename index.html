@@ -1449,8 +1449,8 @@
           <path d="M18 6L6 18M6 6l12 12"/>
         </svg>
       </button>
-      <h3 class="modal-title">Book Your Free Demo</h3>
-      <p class="modal-subtitle">Quick intro so we can prepare for your call</p>
+      <h3 class="modal-title">Book Your Free Consultation</h3>
+      <p class="modal-subtitle">Tell us a bit about your business</p>
       <form id="demoForm" onsubmit="submitDemoForm(event)">
         <div class="form-group">
           <label class="form-label">Your Name</label>
@@ -1501,13 +1501,12 @@
         <img src="aigex-logo.png" alt="AIGEX" class="logo-img">
       </a>
       <ul class="nav-links">
-        <li><a href="#problem">Why Voice Agents</a></li>
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#solution">The Solution</a></li>
         <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#pricing">Pricing</a></li>
       </ul>
       <div class="nav-cta">
-        <a href="#pricing" class="btn btn-secondary">View Pricing</a>
-        <a href="#" onclick="openModal(); return false;" class="btn btn-primary">Book a Demo</a>
+        <a href="#" onclick="openModal(); return false;" class="btn btn-primary">Book a Call</a>
       </div>
     </div>
   </nav>
@@ -1522,11 +1521,11 @@
             AI Voice Technology for UK SMBs
           </div>
           <h1>Never Miss a Call Again</h1>
-          <p class="hero-subtitle">AI receptionist that captures every lead and books jobs while you work. Never lose a £500+ job to voicemail again.</p>
-          <p class="hero-price"><strong>£1,500</strong> setup + <strong>£497/mo</strong> — One job pays for months of service</p>
+          <p class="hero-subtitle">While you're on a job, your phone rings. Another potential customer gone. Another £500+ job lost to a competitor who picked up.</p>
+          <p class="hero-price" style="color: var(--success);">What if every call was answered, every lead captured, every appointment booked — automatically?</p>
           <div class="hero-cta">
-            <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg">Book a Demo</a>
-            <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
+            <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg">Book a Free Consultation</a>
+            <a href="#problem" class="btn btn-secondary btn-lg">See What You're Losing</a>
           </div>
           <div class="hero-stats">
             <div class="hero-stat">
@@ -1672,7 +1671,7 @@
   </section>
 
   <!-- Solution Section -->
-  <section class="section">
+  <section class="section" id="solution">
     <div class="container">
       <div class="solution-grid">
         <div class="solution-content">
@@ -1701,7 +1700,7 @@
               Transfers urgent calls to you
             </li>
           </ul>
-          <a href="#pricing" class="btn btn-primary btn-lg">Book a Demo</a>
+          <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg">Book a Free Consultation</a>
         </div>
         <div class="hero-card" style="max-width: 100%;">
           <div style="text-align: center; padding: 20px 0;">
@@ -1713,17 +1712,17 @@
                 <line x1="8" y1="23" x2="16" y2="23"/>
               </svg>
             </div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">The ROI is Simple</h3>
-            <p style="color: var(--gray-500); font-size: 0.95rem;">Miss one emergency plumbing call = £800 lost<br>Capture that call with AIGEX = ROI in one job</p>
+            <h3 style="font-size: 1.25rem; margin-bottom: 8px;">The Maths is Simple</h3>
+            <p style="color: var(--gray-500); font-size: 0.95rem;">5 missed calls per week at £500 average job value</p>
             <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1);">
               <div style="display: flex; justify-content: space-around; text-align: center;">
                 <div>
-                  <div style="font-size: 1.5rem; font-weight: 700; color: var(--danger);">£800+</div>
-                  <div style="font-size: 0.8rem; color: var(--gray-500);">Missed call cost</div>
+                  <div style="font-size: 1.5rem; font-weight: 700; color: var(--danger);">£10,000+</div>
+                  <div style="font-size: 0.8rem; color: var(--gray-500);">Lost per month</div>
                 </div>
                 <div>
-                  <div style="font-size: 1.5rem; font-weight: 700; color: var(--success);">£297</div>
-                  <div style="font-size: 0.8rem; color: var(--gray-500);">AIGEX per month</div>
+                  <div style="font-size: 1.5rem; font-weight: 700; color: var(--success);">£120,000+</div>
+                  <div style="font-size: 0.8rem; color: var(--gray-500);">Lost per year</div>
                 </div>
               </div>
             </div>
@@ -2045,14 +2044,14 @@
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            What's included in the setup fee?
+            How much revenue am I actually losing to missed calls?
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              The £1,500 setup includes: discovery call to understand your business, custom AI voice and script training, calendar and CRM integration, phone system configuration, testing and quality assurance, and full launch support. It's a complete white-glove onboarding.
+              The average trade job is worth £500-£2,000. If you're missing just 5 calls a week, that's potentially £10,000+ per month walking straight to your competitors. We'll help you calculate your exact numbers on our consultation call.
             </div>
           </div>
         </div>
@@ -2073,76 +2072,16 @@
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section class="section" id="pricing">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Pricing</span>
-        <h2 class="section-title">Investment That Pays for Itself</h2>
-        <p class="section-subtitle">One captured emergency call covers your setup. Then it's pure profit.</p>
-      </div>
-
-      <div class="pricing-single">
-        <div class="pricing-card-main">
-          <div class="pricing-card-header">
-            <div class="pricing-tier-label">Complete Voice Agent Solution</div>
-            <p class="pricing-card-tagline">Everything you need. No hidden costs. Unlimited calls.</p>
-          </div>
-
-          <div class="pricing-breakdown">
-            <div class="pricing-item-setup">
-              <div class="pricing-item-label">One-Time Setup</div>
-              <div class="pricing-item-value">
-                <span class="pricing-currency">£</span><span class="pricing-amount-large">1,500</span>
-              </div>
-              <div class="pricing-item-note">Custom AI training, integrations, and launch</div>
-            </div>
-            <div class="pricing-divider">+</div>
-            <div class="pricing-item-monthly">
-              <div class="pricing-item-label">Monthly Retainer</div>
-              <div class="pricing-item-value">
-                <span class="pricing-currency">£</span><span class="pricing-amount-large">497</span><span class="pricing-period">/mo</span>
-              </div>
-              <div class="pricing-item-note">Unlimited calls, ongoing optimisation</div>
-            </div>
-          </div>
-
-          <div class="pricing-roi-banner">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-            <span>One emergency plumber job (£800+) pays for 2 months of service</span>
-          </div>
-
-          <ul class="pricing-features-main">
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> <strong>Unlimited call minutes</strong></li>
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Custom AI voice and script training</li>
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Calendar and CRM integration</li>
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Lead qualification and routing</li>
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> SMS confirmations and reminders</li>
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Call transfer to mobile</li>
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Full call transcripts and analytics</li>
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Dedicated account manager</li>
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> 24/7 availability, 365 days a year</li>
-            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Ongoing optimisation and support</li>
-          </ul>
-
-          <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg" style="width: 100%;">Book Your Free Demo</a>
-          <p class="pricing-guarantee">No commitment required. See it handle your calls first.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- CTA Section -->
   <section class="section cta-section">
     <div class="container">
       <div class="cta-content">
-        <h2>Stop Losing £500+ Jobs to Voicemail</h2>
-        <p>Book a demo and see how AIGEX captures revenue you're currently missing.</p>
+        <h2>What Would 10 Extra Jobs a Month Mean for Your Business?</h2>
+        <p>Every missed call is money walking out the door. Let's fix that.</p>
         <div class="cta-buttons">
-          <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg">Book Your Free Demo</a>
-          <a href="#pricing" class="btn btn-secondary btn-lg">View Pricing</a>
+          <a href="#" onclick="openModal(); return false;" class="btn btn-primary btn-lg">Book Your Free Consultation</a>
         </div>
-        <p class="cta-note">No commitment required. See ROI in action first.</p>
+        <p class="cta-note">15-minute call. No obligation. We'll show you exactly what you're missing.</p>
       </div>
     </div>
   </section>
@@ -2200,7 +2139,7 @@
       const business = document.getElementById('businessType').value;
       const calls = document.getElementById('numCalls').value;
 
-      const message = `Hey! I'm ${name}, I run a ${business.toLowerCase()} business. We get around ${calls} calls a week and I'd love to see how AIGEX Voice Agents could help. When's a good time for a quick demo?`;
+      const message = `Hey! I'm ${name}, I run a ${business.toLowerCase()} business. We get around ${calls} calls a week and I'd love to chat about how AI voice agents could help. When works for a quick call?`;
 
       const encoded = encodeURIComponent(message);
       window.open(`https://wa.me/21629707770?text=${encoded}`, '_blank');
