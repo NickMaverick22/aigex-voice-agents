@@ -2200,13 +2200,7 @@
       const business = document.getElementById('businessType').value;
       const calls = document.getElementById('numCalls').value;
 
-      const message = `Hi, I'd like to book a demo for AIGEX Voice Agents.
-
-*Name:* ${name}
-*Business:* ${business}
-*Calls/week:* ${calls}
-
-Looking forward to seeing how it works!`;
+      const message = `Hey! I'm ${name}, I run a ${business.toLowerCase()} business. We get around ${calls} calls a week and I'd love to see how AIGEX Voice Agents could help. When's a good time for a quick demo?`;
 
       const encoded = encodeURIComponent(message);
       window.open(`https://wa.me/21629707770?text=${encoded}`, '_blank');
