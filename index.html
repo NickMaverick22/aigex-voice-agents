@@ -946,45 +946,154 @@
       width: 100%;
     }
 
-    .pricing-card.popular .btn-primary {
-      background: var(--white);
-      color: var(--navy);
-    }
-
-    .pricing-card.popular .btn-primary:hover {
-      background: var(--gray-100);
-    }
-
-    .pricing-includes {
-      text-align: center;
-      margin-top: 48px;
-      padding-top: 32px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .pricing-includes-title {
-      font-size: 0.9rem;
-      color: var(--gray-500);
-      margin-bottom: 16px;
-    }
-
-    .pricing-includes-list {
+    /* New Single Pricing Card */
+    .pricing-single {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 24px;
     }
 
-    .pricing-includes-item {
+    .pricing-card-main {
+      background: linear-gradient(180deg, rgba(104, 120, 214, 0.15) 0%, rgba(104, 120, 214, 0.05) 100%);
+      border: 1px solid rgba(104, 120, 214, 0.4);
+      border-radius: 24px;
+      padding: 48px;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .pricing-card-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .pricing-tier-label {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .pricing-card-tagline {
+      font-size: 1rem;
+      color: var(--gray-300);
+    }
+
+    .pricing-breakdown {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 32px;
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pricing-item-setup,
+    .pricing-item-monthly {
+      text-align: center;
+      flex: 1;
+    }
+
+    .pricing-item-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .pricing-item-value {
+      margin-bottom: 8px;
+    }
+
+    .pricing-amount-large {
+      font-family: 'Poppins', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .pricing-item-note {
+      font-size: 0.85rem;
+      color: var(--gray-500);
+    }
+
+    .pricing-divider {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-light);
+    }
+
+    .pricing-roi-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 24px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      border-radius: 12px;
+      margin-bottom: 32px;
+      color: var(--success);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .pricing-features-main {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px 24px;
+      margin-bottom: 32px;
+    }
+
+    .pricing-features-main li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 0.9rem;
       color: var(--gray-300);
     }
 
-    .pricing-includes-item svg {
-      color: var(--primary-light);
+    .pricing-guarantee {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--gray-500);
+      margin-top: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .pricing-card-main {
+        padding: 32px 24px;
+      }
+
+      .pricing-breakdown {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
+      }
+
+      .pricing-divider {
+        transform: rotate(90deg);
+      }
+
+      .pricing-amount-large {
+        font-size: 2.5rem;
+      }
+
+      .pricing-features-main {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-roi-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+      }
     }
 
     /* CTA Section */
@@ -1257,7 +1366,7 @@
           </div>
           <h1>Never Miss a Call Again</h1>
           <p class="hero-subtitle">AI receptionist that captures every lead and books jobs while you work. Never lose a £500+ job to voicemail again.</p>
-          <p class="hero-price">Starting from <strong>£297/month</strong> — One captured job pays for a year</p>
+          <p class="hero-price"><strong>£1,500</strong> setup + <strong>£497/mo</strong> — One job pays for months of service</p>
           <div class="hero-cta">
             <a href="#" class="btn btn-primary btn-lg">Book a Demo</a>
             <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
@@ -1779,14 +1888,14 @@
         </div>
         <div class="faq-item">
           <button class="faq-question">
-            What if I go over my call minutes?
+            What's included in the setup fee?
             <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M19 9l-7 7-7-7"/>
             </svg>
           </button>
           <div class="faq-answer">
             <div class="faq-answer-content">
-              You're never cut off mid-call. If you exceed your plan's minutes, overage rates apply automatically. For Starter: £0.50/minute. For Growth: £0.40/minute. For Enterprise: custom rates. We'll alert you before you approach your limit.
+              The £1,500 setup includes: discovery call to understand your business, custom AI voice and script training, calendar and CRM integration, phone system configuration, testing and quality assurance, and full launch support. It's a complete white-glove onboarding.
             </div>
           </div>
         </div>
@@ -1813,93 +1922,54 @@
       <div class="section-header">
         <span class="section-label">Pricing</span>
         <h2 class="section-title">Investment That Pays for Itself</h2>
-        <p class="section-subtitle">One captured emergency call covers months of service. This is a revenue centre, not a cost.</p>
+        <p class="section-subtitle">One captured emergency call covers your setup. Then it's pure profit.</p>
       </div>
 
-      <div class="pricing-toggle">
-        <button class="pricing-toggle-btn active" data-period="1">Monthly</button>
-        <button class="pricing-toggle-btn" data-period="3">Quarterly<span class="pricing-save">Save 10%</span></button>
-        <button class="pricing-toggle-btn" data-period="12">Yearly<span class="pricing-save">Save 20%</span></button>
-      </div>
-
-      <div class="pricing-grid">
-        <!-- Starter -->
-        <div class="pricing-card">
-          <div class="pricing-tier">Starter</div>
-          <p class="pricing-description">For trades testing AI reception</p>
-          <div class="pricing-price">
-            <span class="pricing-currency">£</span><span class="pricing-amount" data-prices='{"1":"297","3":"267","12":"237"}'>297</span><span class="pricing-period">/mo</span>
+      <div class="pricing-single">
+        <div class="pricing-card-main">
+          <div class="pricing-card-header">
+            <div class="pricing-tier-label">Complete Voice Agent Solution</div>
+            <p class="pricing-card-tagline">Everything you need. No hidden costs. Unlimited calls.</p>
           </div>
-          <p class="pricing-billed" data-billed='{"1":"","3":"Billed £801 quarterly","12":"Billed £2,844 yearly"}'></p>
-          <ul class="pricing-features">
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> 100 call minutes/month</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Custom script training</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Appointment booking</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Call transcripts</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Email support</li>
+
+          <div class="pricing-breakdown">
+            <div class="pricing-item-setup">
+              <div class="pricing-item-label">One-Time Setup</div>
+              <div class="pricing-item-value">
+                <span class="pricing-currency">£</span><span class="pricing-amount-large">1,500</span>
+              </div>
+              <div class="pricing-item-note">Custom AI training, integrations, and launch</div>
+            </div>
+            <div class="pricing-divider">+</div>
+            <div class="pricing-item-monthly">
+              <div class="pricing-item-label">Monthly Retainer</div>
+              <div class="pricing-item-value">
+                <span class="pricing-currency">£</span><span class="pricing-amount-large">497</span><span class="pricing-period">/mo</span>
+              </div>
+              <div class="pricing-item-note">Unlimited calls, ongoing optimisation</div>
+            </div>
+          </div>
+
+          <div class="pricing-roi-banner">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <span>One emergency plumber job (£800+) pays for 2 months of service</span>
+          </div>
+
+          <ul class="pricing-features-main">
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> <strong>Unlimited call minutes</strong></li>
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Custom AI voice and script training</li>
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Calendar and CRM integration</li>
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Lead qualification and routing</li>
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> SMS confirmations and reminders</li>
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Call transfer to mobile</li>
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Full call transcripts and analytics</li>
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Dedicated account manager</li>
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> 24/7 availability, 365 days a year</li>
+            <li><span class="pricing-check"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Ongoing optimisation and support</li>
           </ul>
-          <a href="#" class="btn btn-secondary">Book a Demo</a>
-        </div>
 
-        <!-- Growth -->
-        <div class="pricing-card popular">
-          <div class="pricing-badge">Most Popular</div>
-          <div class="pricing-tier">Growth</div>
-          <p class="pricing-description">For busy trades ready to scale</p>
-          <div class="pricing-price">
-            <span class="pricing-currency">£</span><span class="pricing-amount" data-prices='{"1":"497","3":"447","12":"397"}'>497</span><span class="pricing-period">/mo</span>
-          </div>
-          <p class="pricing-billed" data-billed='{"1":"","3":"Billed £1,341 quarterly","12":"Billed £4,764 yearly"}'></p>
-          <ul class="pricing-features">
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> 300 call minutes/month</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> <strong>Lead qualification</strong></li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> <strong>Calendar + CRM integration</strong></li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> SMS confirmations</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Call transfer to mobile</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Dedicated account manager</li>
-          </ul>
-          <a href="#" class="btn btn-primary">Book a Demo</a>
-        </div>
-
-        <!-- Enterprise -->
-        <div class="pricing-card">
-          <div class="pricing-tier">Enterprise</div>
-          <p class="pricing-description">For multi-location operations</p>
-          <div class="pricing-price">
-            <span class="pricing-currency">£</span><span class="pricing-amount" data-prices='{"1":"997","3":"897","12":"797"}'>997</span><span class="pricing-period">/mo</span>
-          </div>
-          <p class="pricing-billed" data-billed='{"1":"","3":"Billed £2,691 quarterly","12":"Billed £9,564 yearly"}'></p>
-          <ul class="pricing-features">
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> 1,000 call minutes/month</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> <strong>Custom AI voice</strong></li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> <strong>Multi-location support</strong></li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Outbound reminder calls</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> Advanced analytics</li>
-            <li><span class="pricing-check"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></span> White-glove onboarding</li>
-          </ul>
-          <a href="contact.html" class="btn btn-secondary">Contact Sales</a>
-        </div>
-      </div>
-
-      <div class="pricing-includes">
-        <p class="pricing-includes-title">All plans include:</p>
-        <div class="pricing-includes-list">
-          <div class="pricing-includes-item">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-            24/7 availability
-          </div>
-          <div class="pricing-includes-item">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-            British accents
-          </div>
-          <div class="pricing-includes-item">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-            GDPR compliant
-          </div>
-          <div class="pricing-includes-item">
-            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-            No setup fees
-          </div>
+          <a href="#" class="btn btn-primary btn-lg" style="width: 100%;">Book Your Free Demo</a>
+          <p class="pricing-guarantee">No commitment required. See it handle your calls first.</p>
         </div>
       </div>
     </div>
@@ -1945,27 +2015,6 @@
   </footer>
 
   <script>
-    // Pricing Toggle
-    const toggleButtons = document.querySelectorAll('.pricing-toggle-btn');
-    const priceAmounts = document.querySelectorAll('.pricing-amount');
-    const billedTexts = document.querySelectorAll('.pricing-billed');
-
-    toggleButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        toggleButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        const period = button.dataset.period;
-        priceAmounts.forEach(amount => {
-          const prices = JSON.parse(amount.dataset.prices);
-          amount.textContent = prices[period];
-        });
-        billedTexts.forEach(billed => {
-          const billedData = JSON.parse(billed.dataset.billed);
-          billed.textContent = billedData[period];
-        });
-      });
-    });
-
     // FAQ Accordion
     document.querySelectorAll('.faq-question').forEach(button => {
       button.addEventListener('click', () => {
