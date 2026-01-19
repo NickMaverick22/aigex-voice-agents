@@ -604,16 +604,13 @@
       20%, 80% { width: 80px; opacity: 1; }
     }
 
-    .problem-visual-arrow {
-      position: absolute;
-      right: -30px;
-      color: var(--danger);
-      animation: slideRight 1.5s ease-in-out infinite;
+    .problem-visual-fade {
+      animation: fadeOut 2.5s ease-in-out infinite;
     }
 
-    @keyframes slideRight {
-      0%, 100% { transform: translateX(0); opacity: 0.5; }
-      50% { transform: translateX(8px); opacity: 1; }
+    @keyframes fadeOut {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
     }
 
     .problem-visual-pulse {
@@ -1949,18 +1946,13 @@
         <div class="problem-card-serious">
           <div class="problem-visual">
             <div class="problem-visual-bg"></div>
-            <div class="problem-visual-icon">
+            <div class="problem-visual-icon problem-visual-fade">
               <svg width="56" height="56" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
                 <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
                 <path d="M23 21v-2a4 4 0 00-3-3.87"/>
                 <path d="M16 3.13a4 4 0 010 7.75"/>
               </svg>
-              <div class="problem-visual-arrow">
-                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
-              </div>
             </div>
           </div>
           <h3 class="problem-title-serious">Competitors Win</h3>
