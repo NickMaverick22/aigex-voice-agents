@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Colors - AIGEX Design System */
+  --color-primary: #6878d6;
+  --color-primary-dark: #4d61d6;
+  --color-primary-light: #8b9aef;
+  --color-navy: #242a56;
+  --color-navy-light: #393a56;
+  --color-charcoal: #1a1d3a;
+  --color-lavender: #eff2ff;
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Gray scale */
+  --color-gray-100: #f8f9fc;
+  --color-gray-200: #e9ecf5;
+  --color-gray-300: #d1d5e8;
+  --color-gray-500: #6b7280;
+  --color-gray-700: #374151;
+
+  /* Fonts */
+  --font-heading: var(--font-poppins);
+  --font-body: var(--font-inter);
+
+  /* Animations */
+  --animate-pulse: pulse 2s infinite;
+  --animate-ring: ring 1.5s ease-in-out infinite;
+  --animate-strike-through: strikeThrough 2s ease-in-out infinite;
+  --animate-fade-out: fadeOut 2.5s ease-in-out infinite;
+  --animate-warning-blink: warningBlink 1s ease-in-out infinite;
+}
+
+/* Keyframes */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes ring {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes strikeThrough {
+  0%, 100% { width: 0; opacity: 0; }
+  20%, 80% { width: 80px; opacity: 1; }
+}
+
+@keyframes fadeOut {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes warningBlink {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--color-charcoal);
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Gradient utilities */
+.gradient-primary {
+  background: linear-gradient(135deg, #6878d6 0%, #4d61d6 50%, #3d4fc9 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(180deg, #1a1d3a 0%, #242a56 100%);
+}
+
+/* Shadow utilities */
+.shadow-glow {
+  box-shadow: 0 0 40px rgba(104, 120, 214, 0.3);
+}
+
+.shadow-glow-strong {
+  box-shadow: 0 0 30px rgba(104, 120, 214, 0.4);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-charcoal);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary);
+}
