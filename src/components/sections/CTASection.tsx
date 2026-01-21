@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonLink } from '@/components/ui/Button';
+import { CTAButton } from '@/components/ui/CTAButton';
 
 interface CTASectionProps {
   onOpenModal: () => void;
@@ -22,9 +22,8 @@ export function CTASection({ onOpenModal }: CTASectionProps) {
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <ButtonLink
+            <CTAButton
               href="#"
-              variant="primary"
               size="lg"
               onClick={(e) => {
                 e.preventDefault();
@@ -32,7 +31,7 @@ export function CTASection({ onOpenModal }: CTASectionProps) {
               }}
             >
               Book Your Free Consultation
-            </ButtonLink>
+            </CTAButton>
           </div>
 
           <p className="mt-6 text-sm text-gray-500">

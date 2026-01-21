@@ -20,7 +20,7 @@ export function Button({
 }: ButtonProps) {
   const baseStyles = `
     inline-flex items-center justify-center gap-2.5
-    rounded-lg font-semibold text-white
+    rounded-2xl font-semibold text-white
     transition-all duration-200 ease-out
     cursor-pointer border-none
     disabled:opacity-50 disabled:cursor-not-allowed
@@ -88,7 +88,7 @@ export function ButtonLink({
 }: ButtonLinkProps) {
   const baseStyles = `
     inline-flex items-center justify-center gap-2.5
-    rounded-lg font-semibold text-white
+    rounded-2xl font-semibold text-white
     transition-all duration-200 ease-out
     cursor-pointer no-underline
   `;

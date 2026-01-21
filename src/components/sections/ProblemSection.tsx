@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonLink } from '@/components/ui/Button';
+import { CTAButton } from '@/components/ui/CTAButton';
 
 interface ProblemSectionProps {
   onOpenModal: () => void;
@@ -50,9 +50,8 @@ export function ProblemSection({ onOpenModal }: ProblemSectionProps) {
         </div>
 
         <div className="text-center mt-12">
-          <ButtonLink
+          <CTAButton
             href="#"
-            variant="primary"
             size="lg"
             onClick={(e) => {
               e.preventDefault();
@@ -60,7 +59,7 @@ export function ProblemSection({ onOpenModal }: ProblemSectionProps) {
             }}
           >
             Stop the Bleeding
-          </ButtonLink>
+          </CTAButton>
           <p className="text-[0.85rem] text-gray-500 mt-3">
             See how much you&apos;re really losing
           </p>

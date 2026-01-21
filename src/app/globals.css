@@ -21,7 +21,7 @@
   --color-gray-700: #374151;
 
   /* Fonts */
-  --font-heading: var(--font-poppins);
+  --font-heading: var(--font-inter);
   --font-body: var(--font-inter);
 
   /* Animations */

@@ -1,6 +1,7 @@
 'use client';
 
 import { ButtonLink } from '@/components/ui/Button';
+import { CTAButton } from '@/components/ui/CTAButton';
 import { PhoneIcon } from '@/components/icons';
 
 interface HeroProps {
@@ -19,7 +20,7 @@ export function Hero({ onOpenModal }: HeroProps) {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-[0.85rem] text-primary-light mb-6">
               <span className="w-2 h-2 bg-primary rounded-full animate-[pulse_2s_infinite]" />
-              AI Voice Technology for UK SMBs
+              AI Voice Technology for 🇬🇧 SMBs
             </div>
 
             <h1 className="text-[2.25rem] md:text-[3.5rem] font-bold leading-[1.3] mb-6 bg-gradient-to-br from-white to-gray-300 bg-clip-text text-transparent">
@@ -37,9 +38,8 @@ export function Hero({ onOpenModal }: HeroProps) {
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center lg:justify-start mb-12">
-              <ButtonLink
+              <CTAButton
                 href="#"
-                variant="primary"
                 size="lg"
                 onClick={(e) => {
                   e.preventDefault();
@@ -47,7 +47,7 @@ export function Hero({ onOpenModal }: HeroProps) {
                 }}
               >
                 Book a Free Consultation
-              </ButtonLink>
+              </CTAButton>
               <ButtonLink href="#problem" variant="secondary" size="lg">
                 See What You&apos;re Losing
               </ButtonLink>

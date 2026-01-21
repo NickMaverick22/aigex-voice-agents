@@ -51,18 +51,24 @@ export function RoadmapSection() {
 
         <div className="relative py-10">
           {/* Connection line - hidden on mobile */}
-          <div className="hidden lg:block absolute top-[76px] left-[10%] right-[10%] h-[3px] bg-gradient-to-r from-primary via-success to-primary-light rounded" />
+          {/* Gradient: primary (steps 1-3), then green/success (steps 3-5) */}
+          <div
+            className="hidden lg:block absolute top-[68px] left-[10%] right-[10%] h-[3px] rounded"
+            style={{
+              background: 'linear-gradient(to right, #6878d6 0%, #6878d6 40%, #22c55e 50%, #22c55e 100%)'
+            }}
+          />
 
-          <div className="flex flex-col lg:flex-row justify-between relative z-[1] gap-8 lg:gap-0">
+          <div className="flex flex-col lg:flex-row justify-between relative z-[1] gap-8 lg:gap-4">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`flex flex-col lg:flex-row items-center text-center lg:text-center flex-1 max-w-[300px] lg:max-w-[180px] mx-auto gap-5 lg:gap-0 ${
+                className={`flex flex-col items-center text-center flex-1 max-w-[300px] lg:max-w-[180px] mx-auto ${
                   step.highlight ? 'highlight' : ''
                 }`}
               >
                 <div
-                  className={`w-14 h-14 bg-white border-[3px] rounded-full flex items-center justify-center relative z-[2] mb-0 lg:mb-5 ${
+                  className={`w-14 h-14 bg-white border-[3px] rounded-full flex items-center justify-center relative z-[2] mb-4 shrink-0 ${
                     step.highlight
                       ? 'border-success text-success'
                       : 'border-primary text-primary'
@@ -71,9 +77,9 @@ export function RoadmapSection() {
                   {step.icon}
                 </div>
                 <div
-                  className={`pt-2 ${
+                  className={`${
                     step.highlight
-                      ? 'bg-success/[0.08] rounded-xl p-4 lg:-mt-4'
+                      ? 'bg-success/[0.08] rounded-xl p-4'
                       : ''
                   }`}
                 >

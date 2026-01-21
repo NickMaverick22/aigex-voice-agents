@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
-import { ButtonLink } from '@/components/ui/Button';
+import { CTAButton } from '@/components/ui/CTAButton';
 
 interface NavbarProps {
   onOpenModal?: () => void;
@@ -70,16 +70,15 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         </ul>
 
         <div className="flex gap-3">
-          <ButtonLink
+          <CTAButton
             href="#"
-            variant="primary"
             onClick={(e) => {
               e.preventDefault();
               onOpenModal?.();
             }}
           >
             Book a Call
-          </ButtonLink>
+          </CTAButton>
         </div>
       </div>
     </nav>

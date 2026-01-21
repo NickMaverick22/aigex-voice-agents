@@ -1,6 +1,6 @@
 'use client';
 
-import { ButtonLink } from '@/components/ui/Button';
+import { CTAButton } from '@/components/ui/CTAButton';
 import { CheckIcon, MicIcon } from '@/components/icons';
 
 interface SolutionSectionProps {
@@ -44,9 +44,8 @@ export function SolutionSection({ onOpenModal }: SolutionSectionProps) {
               ))}
             </ul>
 
-            <ButtonLink
+            <CTAButton
               href="#"
-              variant="primary"
               size="lg"
               onClick={(e) => {
                 e.preventDefault();
@@ -54,7 +53,7 @@ export function SolutionSection({ onOpenModal }: SolutionSectionProps) {
               }}
             >
               Book a Free Consultation
-            </ButtonLink>
+            </CTAButton>
           </div>
 
           {/* ROI Card */}
@@ -79,7 +78,7 @@ export function SolutionSection({ onOpenModal }: SolutionSectionProps) {
                     </div>
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-success">
+                    <div className="text-2xl font-bold text-danger">
                       £120,000+
                     </div>
                     <div className="text-[0.8rem] text-gray-500">
